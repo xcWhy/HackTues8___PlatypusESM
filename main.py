@@ -5,7 +5,7 @@ SCREEN_HEIGHT = 800
 SCREEN_WIDTH = 1535
 
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-background = pygame.image.load("imgs/background.jpg")
+background = pygame.image.load("imgs/background.png")
 
 button_character = pygame.image.load('imgs/Character.png').convert_alpha()
 button_training = pygame.image.load('imgs/TrainingWheels.png').convert_alpha()
