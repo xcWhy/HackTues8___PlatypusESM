@@ -14,7 +14,7 @@ answer = pygame.image.load('imgs/karta_otg.png').convert_alpha()
 arrow = pygame.image.load('imgs/ButtonArrow.png').convert_alpha()
 next = pygame.image.load('imgs/Next.png').convert_alpha()
 
-back_button = button.Button(10, 10, back_bttn, 150, 100)
+back = button.Button(10, 10, back_bttn, 150, 100)
 question_static = static.Static(450, 150, question, 650, 600)
 answer_static = static.Static(450, 150, answer, 650, 600)
 arrow_button = button.Button(75, 300, arrow, 1200, 1200)
@@ -26,7 +26,7 @@ while run:
 
 	switch_file = 0
 
-	if back_button.draw(screen):
+	if back.draw(screen):
 		switch_file = 1
 		break
 

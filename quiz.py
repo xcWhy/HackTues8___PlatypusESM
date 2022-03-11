@@ -11,7 +11,7 @@ back_bttn = pygame.image.load('imgs_updated/Back.png').convert_alpha()
 single_img = pygame.image.load('imgs_updated/Singleplayer.png').convert_alpha()
 multi_img = pygame.image.load('imgs_updated/Multiplayer.png').convert_alpha()
 
-back_button = button.Button(10, 10, back_bttn, 150, 100)
+back = button.Button(10, 10, back_bttn, 150, 100)
 single = button.Button(50, 300, single_img, 700, 300)
 multi = button.Button(780, 300, multi_img, 700, 300)
 
@@ -26,7 +26,7 @@ while run:
 	if multi.draw(screen):
 		print("drun drun")
 
-	if back_button.draw(screen):
+	if back.draw(screen):
 		switch_file = 1
 		break
 

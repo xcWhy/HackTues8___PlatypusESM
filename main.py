@@ -49,6 +49,6 @@ if switch_file == 2:
 if switch_file == 3:
 	import quiz
 if switch_file == 4:
-	import share
+	import Share
 
 pygame.quit()

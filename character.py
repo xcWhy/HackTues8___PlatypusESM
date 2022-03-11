@@ -20,7 +20,7 @@ astronautg_img = pygame.image.load('imgs/AstronautGreen.png').convert_alpha()
 astronautr_img = pygame.image.load('imgs/AstronautRed.png').convert_alpha()
 spacesuit_img = pygame.image.load('imgs/ChooseYourSpacesuit.png').convert_alpha()
 
-back_button = button.Button(10, 10, back_bttn, 150, 100)
+back = button.Button(10, 10, back_bttn, 150, 100)
 choose = static.Static(-25, -80, choose_img, 600, 600)
 astr1 = button.Button(4, 80, nelson_img, 500, 500)
 astr2 = button.Button(4, 170, yuri_img, 500, 500)

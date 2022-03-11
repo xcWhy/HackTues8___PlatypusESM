@@ -10,7 +10,7 @@ background = pygame.image.load("imgs/background.png")
 
 back_bttn = pygame.image.load('imgs_updated/Back.png').convert_alpha()
 
-back_button = button.Button(10, 10, back_bttn, 150, 100)
+back = button.Button(10, 10, back_bttn, 150, 100)
 
 run = True
 while run:
@@ -18,7 +18,7 @@ while run:
 
 	switch_file = 0
 
-	if back_button.draw(screen):
+	if back.draw(screen):
 		switch_file = 1
 		break
 
