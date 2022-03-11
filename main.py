@@ -5,6 +5,7 @@ SCREEN_HEIGHT = 800
 SCREEN_WIDTH = 1535
 
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+background = pygame.image.load("imgs/background.jpg")
 
 button_character = pygame.image.load('imgs/Character.png').convert_alpha()
 button_training = pygame.image.load('imgs/TrainingWheels.png').convert_alpha()
@@ -15,8 +16,6 @@ button_1 = button.Button(500, 0, button_character, 500, 450)
 button_2 = button.Button(500, 150, button_training, 500, 450)
 button_3 = button.Button(500, 300, button_game, 500, 450)
 button_4 = button.Button(500, 450, button_share, 500, 450)
-
-background = pygame.image.load("imgs/background.jpg")
 
 run = True
 while run:
