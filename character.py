@@ -49,8 +49,11 @@ while run:
     choose.draw(screen)
     astronautw.draw(screen)
 
+    switch_file = 0
+
     if back.draw(screen):
-        print('back')
+        switch_file = 1
+        break
 
     if astr1.draw(screen):
         print('Nelson Armstrong')
@@ -70,6 +73,9 @@ while run:
             run = False
 
     pygame.display.update()
+
+if switch_file == 1:
+	import main
 
 pygame.quit()
 

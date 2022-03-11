@@ -15,8 +15,11 @@ run = True
 while run:
 	screen.blit(background, (0, 0))
 
+	switch_file = 0
+
 	if back_button.draw(screen):
-		print("Back")
+		switch_file = 1
+		break
 
 	for event in pygame.event.get():
 
@@ -24,5 +27,8 @@ while run:
 			run = False
 
 	pygame.display.update()
+
+if switch_file == 1:
+	import main
 
 pygame.quit()
