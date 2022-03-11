@@ -22,9 +22,11 @@ while run:
 	switch_file = 0
 
 	if single.draw(screen):
-		print("drun")
+		switch_file = 2
+		break
 	if multi.draw(screen):
-		print("drun drun")
+		switch_file = 3
+		break
 
 	if back.draw(screen):
 		switch_file = 1
@@ -39,5 +41,9 @@ while run:
 
 if switch_file == 1:
 	import main
+if switch_file == 2:
+	import single_player
+if switch_file == 3:
+	import multi_player
 
 pygame.quit()
