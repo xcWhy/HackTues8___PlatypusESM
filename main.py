@@ -6,12 +6,15 @@ SCREEN_WIDTH = 1535
 
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
-start_img = pygame.image.load('imgs/button_assets.png').convert_alpha()
+button_character = pygame.image.load('imgs/Character.png').convert_alpha()
+button_training = pygame.image.load('imgs/TrainingWheels.png').convert_alpha()
+button_game = pygame.image.load('imgs/OutInTheSpace.png').convert_alpha()
+button_share = pygame.image.load('imgs/ShareYourKnowledge.png').convert_alpha()
 
-button_1 = button.Button(450, -50, start_img)
-button_2 = button.Button(450, 100, start_img)
-button_3 = button.Button(450, 250, start_img)
-button_4 = button.Button(450, 400, start_img)
+button_1 = button.Button(500, 0, button_character, 500, 450)
+button_2 = button.Button(500, 150, button_training, 500, 450)
+button_3 = button.Button(500, 300, button_game, 500, 450)
+button_4 = button.Button(500, 450, button_share, 500, 450)
 
 background = pygame.image.load("imgs/background.jpg")
 
@@ -28,9 +31,7 @@ while run:
 	if button_4.draw(screen):
 		print('Button 4')
 
-	#event handler
 	for event in pygame.event.get():
-		#quit game
 		if event.type == pygame.QUIT:
 			run = False
 
