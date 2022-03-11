@@ -8,7 +8,7 @@ SCREEN_WIDTH = 1535
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
 start_img = pygame.image.load('imgs/button_assets.png').convert_alpha()
-back_img = pygame.image.load('imgs/Back.png').convert_alpha()
+back_bttn = pygame.image.load('imgs_updated/Back.png').convert_alpha()
 choose_img = pygame.image.load('imgs/ChooseYourAstronaut.png').convert_alpha()
 yuri_img = pygame.image.load('imgs/Yuri.png').convert_alpha()
 nelson_img = pygame.image.load('imgs/Nelson.png').convert_alpha()
@@ -20,7 +20,7 @@ astronautg_img = pygame.image.load('imgs/AstronautGreen.png').convert_alpha()
 astronautr_img = pygame.image.load('imgs/AstronautRed.png').convert_alpha()
 spacesuit_img = pygame.image.load('imgs/ChooseYourSpacesuit.png').convert_alpha()
 
-back = button.Button(-100, -90, back_img, 350, 350)
+back_button = button.Button(10, 10, back_bttn, 150, 100)
 choose = static.Static(-25, -80, choose_img, 600, 600)
 astr1 = button.Button(4, 80, nelson_img, 500, 500)
 astr2 = button.Button(4, 170, yuri_img, 500, 500)
@@ -49,8 +49,11 @@ while run:
     choose.draw(screen)
     astronautw.draw(screen)
 
+    switch_file = 0
+
     if back.draw(screen):
-        print('back')
+        switch_file = 1
+        break
 
     if astr1.draw(screen):
         print('Nelson Armstrong')
@@ -70,6 +73,9 @@ while run:
             run = False
 
     pygame.display.update()
+
+if switch_file == 1:
+	import main
 
 pygame.quit()
 
