@@ -4,7 +4,11 @@
     <content url="file://$MODULE_DIR$">
       <excludeFolder url="file://$MODULE_DIR$/Environment" />
     </content>
+<<<<<<< HEAD
     <orderEntry type="jdk" jdkName="Python 3.9" jdkType="Python SDK" />
+=======
+    <orderEntry type="jdk" jdkName="Python 3.9 (HackTues8___PlatypusESM)" jdkType="Python SDK" />
+>>>>>>> 756a796ae2193a23a072e8bc05c8a29cfe845805
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
 </module>
