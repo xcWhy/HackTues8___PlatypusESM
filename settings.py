@@ -9,9 +9,9 @@ screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
 background = pygame.image.load("imgs/background.png")
 
-set_bttn = pygame.image.load('imgs_updated/Settings.png').convert_alpha()
+back_bttn = pygame.image.load('imgs_updated/Back.png').convert_alpha()
 
-back = button.Button(10, 10, set_bttn, 150, 100)
+back = button.Button(10, 10, back_bttn, 150, 100)
 
 
 
@@ -32,6 +32,6 @@ while True:
     pygame.display.update()
 
 if switch_file == 1:
-	import settings
+	import homepg
 
 pygame.quit()
