@@ -13,9 +13,9 @@ display_surface = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
 def draw(text, X, Y):
 	pygame.init()
-	font = font.Font('Comic Sans MS', 80)
-	text = font.render(text, True, WHITE)
-	display_surface.blit(text, X, Y)
+	font = pygame.font.SysFont('Comic Sans MS', 80)
+	paragraph = font.render(text, True, WHITE)
+	display_surface.blit(paragraph, (X, Y))
 
 
 
@@ -45,7 +45,7 @@ def training_func(new_start):
 
 			if flip:
 				answer_static.draw(screen)
-				draw("vypros edno", 50, 50)
+				draw("vypros edno", 550, 350)
 			else:
 				question_static.draw(screen)
 
