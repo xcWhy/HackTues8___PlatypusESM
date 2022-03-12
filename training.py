@@ -4,13 +4,24 @@ import button
 
 SCREEN_HEIGHT = 800
 SCREEN_WIDTH = 1535
+WHITE = 0, 0, 0
+
 
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 background = pygame.image.load("imgs/background.png")
+display_surface = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+
+def draw(text, X, Y):
+	pygame.init()
+	font = font.Font('Comic Sans MS', 80)
+	text = font.render(text, True, WHITE)
+	display_surface.blit(text, X, Y)
+
+
 
 back_bttn = pygame.image.load('imgs_updated/Back.png').convert_alpha()
-question = pygame.image.load('imgs/karta_vyp.png').convert_alpha()
-answer = pygame.image.load('imgs/karta_otg.png').convert_alpha()
+question = pygame.image.load('imgs_updated/FlashCard_Template.png').convert_alpha()
+answer = pygame.image.load('imgs_updated/FlashCard_Template.png').convert_alpha()
 reverse = pygame.image.load('imgs_updated/UnoReverse.png').convert_alpha()
 next = pygame.image.load('imgs_updated/Next.png').convert_alpha()
 
@@ -25,6 +36,7 @@ def training_func(new_start):
 
 	question_static.draw(screen)
 	while new_start == 2:
+
 		if reverse_button.draw(screen):
 			if flip == False:
 				flip = True
@@ -33,6 +45,7 @@ def training_func(new_start):
 
 			if flip:
 				answer_static.draw(screen)
+				draw("vypros edno", 50, 50)
 			else:
 				question_static.draw(screen)
 
