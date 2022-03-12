@@ -17,19 +17,19 @@ astronautw_img = pygame.image.load('imgs_updated/AstronautWhite.png').convert_al
 astronautb_img = pygame.image.load('imgs_updated/AstronautBlue.png').convert_alpha()
 astronautg_img = pygame.image.load('imgs_updated/AstronautGreen.png').convert_alpha()
 astronautr_img = pygame.image.load('imgs_updated/AstronautRed.png').convert_alpha()
-spacesuit_img = pygame.image.load('imgs/ChooseYourSpacesuit.png').convert_alpha()
+spacesuit_img = pygame.image.load('imgs_updated/ChooseYourSpacesuit.png').convert_alpha()
 
 back = button.Button(10, 10, back_bttn, 150, 100)
 choose = static.Static(130, 165, choose_img, 350, 75)
 astr1 = button.Button(130, 270, nelson_img, 350, 75)
 astr2 = button.Button(130, 355, yuri_img, 350, 75)
 astr3 = button.Button(130, 440, buzz_img, 350, 75)
-reverse = button.Button(1100, 675, reverse_img, 75, 75)
+reverse = button.Button(1140, 675, reverse_img, 75, 75)
 astronautw = static.Static(400, -170, astronautw_img, 1000, 1000)
 astronautb = static.Static(400, -170, astronautb_img, 1000, 1000)
 astronautg = static.Static(400, -170, astronautg_img, 1000, 1000)
 astronautr = static.Static(400, -170, astronautr_img, 1000, 1000)
-spacesuit = static.Static(400, 400, spacesuit_img, 400, 400)
+spacesuit = static.Static(1000, 600, spacesuit_img, 350, 75)
 
 
 def character_func(new_start):
