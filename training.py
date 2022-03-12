@@ -83,8 +83,4 @@ def training_func(new_start):
 
 		pygame.display.update()
 
-<<<<<<< HEAD
 	return new_start
-=======
-	return new_start
->>>>>>> d71600d16fb7e24fc20980c6994f0b93c8f8e56d
