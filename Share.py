@@ -23,9 +23,7 @@ textinput = pygame_textinput.TextInputVisualizer()
 
 base_font = pygame.font.Font('font/ChalkboardSE-Regular.ttf', 32)
 
-while True:
-	screen.blit(background, (0, 0))
-
+def share_func(new_start):
 	share.draw(screen)
 	type.draw(screen)
 
@@ -34,20 +32,13 @@ while True:
 	textinput.update(events)
 	screen.blit(textinput.surface, (480, 375))
 
-	switch_file = 0
-
 	if back.draw(screen):
-		switch_file = 1
-		break
+		new_start = 0;
 
 	for event in pygame.event.get():
 		if event.type == pygame.QUIT:
 			exit()
 
 	pygame.display.update()
+	return new_start
 
-
-if switch_file == 1:
-	import main
-
-pygame.quit()
