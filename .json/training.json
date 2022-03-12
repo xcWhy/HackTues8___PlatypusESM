@@ -8,5 +8,6 @@
   {"question": "What are the main parts of a spacesuit?", "answer": "- Hard upper torso, arm assembly covers the arms and connects to the gloves, the helmet and the Visor Assembly"},
   {"question": "How many seconds can a human being survive in the space without equipment?", "answer": "A human being can survive only 90 seconds or a minute and a half in the space without equipment"},
   {"question": "Which is the first animal to make an orbital  spaceflight around the Earth?", "answer": "The first ever animal to make a full orbit around the Earth is the dog Laika"},
-  {"question": "Which are the most commonly used materials for making a rocket?", "answer": "They are steel, aluminium, titatnium"}
+  {"question": "Which are the most commonly used materials for making a rocket?", "answer": "They are steel, aluminium, titatnium"},
+  {"question":  "END", "answer":  "END"}
 ]

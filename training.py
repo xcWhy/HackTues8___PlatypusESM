@@ -71,10 +71,13 @@ def training_func(new_start):
 		if next_button.draw(screen):
 			i += 1
 
+			if question != "END":
+				draw(question, 550, 350)
+			else:
+				i=0;
+
 			question = jsonObject[i]['question']
 			answer = jsonObject[i]['answer']
-
-			draw(question, 550, 350)
 
 
 		for event in pygame.event.get():
