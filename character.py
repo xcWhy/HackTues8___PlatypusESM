@@ -5,6 +5,8 @@ import static
 SCREEN_HEIGHT = 800
 SCREEN_WIDTH = 1535
 
+transparent = 0, 0, 0, 0
+
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 
 start_img = pygame.image.load('imgs/button_assets.png').convert_alpha()
@@ -38,16 +40,23 @@ spacesuit.draw(screen)
 
 background = pygame.image.load("imgs/background.png")
 
-astronauts_colors = [astronautw, astronautb, astronautg, astronautr]
-k = 1
+#astronauts_colors = [astronautw, astronautb, astronautg, astronautr]
+rechnik = {
+            0:astronautw,
+            1:astronautb,
+            2:astronautg,
+            3:astronautr
+        }
+k = 0
 transparent = (0, 0, 0, 0)
 
-run = True
-while run:
+personal_astronaut = astronautw
+
+while True:
     screen.blit(background, (0, 0))
 
     choose.draw(screen)
-    astronautw.draw(screen)
+    personal_astronaut.draw(screen)
 
     switch_file = 0
 
@@ -57,20 +66,25 @@ while run:
 
     if astr1.draw(screen):
         print('Nelson Armstrong')
+    
     if astr2.draw(screen):
         print('Yuri Gagarin')
+    
     if astr3.draw(screen):
         print('Buzz Aldrin')
+
     if switch.draw(screen):
-        astronauts_colors[k-1].fill(transparent)
-        astronauts_colors[k].draw(screen)
+        
+        #rechnik[k].draw(screen)
+        personal_astronaut = rechnik[k]
         k += 1
-        if k == 3:
+        #print(personal_astronaut)
+        if k == 4:
             k = 0
     for event in pygame.event.get():
         #quit game
         if event.type == pygame.QUIT:
-            run = False
+            exit()
 
     pygame.display.update()
 
