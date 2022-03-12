@@ -75,7 +75,7 @@ while run:
     pygame.display.update()
 
 if switch_file == 1:
-	import main
+    import main
 
 pygame.quit()
 
