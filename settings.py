@@ -14,24 +14,12 @@ back_bttn = pygame.image.load('imgs_updated/Back.png').convert_alpha()
 back = button.Button(10, 10, back_bttn, 150, 100)
 
 
-
-while True:
-    screen.blit(background, (0, 0))
-
-    switch_file = 0
-
+def settings_func(new_start):
     if back.draw(screen):
-        switch_file = 1
-        break
+        new_start = -1
 
     for event in pygame.event.get():
-        #quit game
-        if event.type == pygame.QUIT:
-            exit()
 
-    pygame.display.update()
+        if event.type == pygame.QUIT: exit()
 
-if switch_file == 1:
-	import homepg
-
-pygame.quit()
+    return new_start

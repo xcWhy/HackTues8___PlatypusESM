@@ -21,7 +21,7 @@ def homepage_func(new_start):
     bckg.draw(screen)
 
     if set.draw(screen):
-        print("Set")
+        new_start = -2
 
     if menu_button.draw(screen):
         new_start = 0

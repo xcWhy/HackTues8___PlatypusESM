@@ -1,3 +1,4 @@
+from settings import settings_func
 from homepg import homepage_func
 from character import character_func
 from training import training_func
@@ -45,9 +46,11 @@ def main_func():
 while True:
 	screen.blit(background, (0, 0))
 
+	if new_start == -2:
+		new_start = settings_func(new_start)
 	if new_start == -1:
 		new_start = homepage_func(new_start)
-	if new_start == 0:
+	elif new_start == 0:
 		main_func()
 	elif new_start == 1:
 		new_start = character_func(new_start)

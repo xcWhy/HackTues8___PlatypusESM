@@ -1,9 +1,0 @@
-<<<<<<< HEAD
-[
-  {"question": "Which structures are considered a 'rocket structures'?", "answer": "The housing, the nozzle, the fairing"},
-  {"question": "Is it easier to send a rocket to the space if it's heavier or lighter?", "answer":  "The rocket should be lighter so it could be send in the space easier"},
-  {"question": "How many light years from Earth is the nearest star? (After the Sun)", "answer":  "Alpha Centauri C is about 4.25 light years from Earth, making it closest star to Earth after the Sun"}
-]
-=======
-{"question": "Коя от следните конструкции НЕ се счита за конструкция на ракетата?", "answer": "Връх"}
->>>>>>> 5f963b8897dc5c57f9c8e94b86bff82159689ced
