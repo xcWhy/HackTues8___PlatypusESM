@@ -24,7 +24,7 @@ Font = ImageFont.truetype('ChalkboardSE-Regular.ttf',125)
 choose_category.text((130,70),"Choose your category", font=Font, fill=(255,255,255))
 org_bttn.save("imgs_updated/ChooseYourCategory.png")
 
-choose_ctgr= pygame.image.load('imgs_updated/ChooseCategory.png').convert_alpha()
+choose_ctgr= pygame.image.load('imgs_updated/ChooseYourCategory.png').convert_alpha()
 cat_bttn = button.Button(575,200,choose_ctgr,400,100)
 
 
