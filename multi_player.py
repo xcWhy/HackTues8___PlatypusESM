@@ -4,8 +4,6 @@ import static
 import button
 import PIL
 from PIL import Image
-from PIL import ImageDraw
-from PIL import ImageFont
 
 SCREEN_HEIGHT = 800
 SCREEN_WIDTH = 1535
