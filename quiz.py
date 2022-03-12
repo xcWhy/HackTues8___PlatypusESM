@@ -15,35 +15,16 @@ back = button.Button(10, 10, back_bttn, 150, 100)
 single = button.Button(50, 300, single_img, 700, 200)
 multi = button.Button(780, 300, multi_img, 700, 200)
 
-run = True
-while run:
-	screen.blit(background, (0, 0))
-
-	switch_file = 0
-
-	if single.draw(screen):
-		switch_file = 2
-		break
-	if multi.draw(screen):
-		switch_file = 3
-		break
-
+def quiz_func(new_start):
 	if back.draw(screen):
-		switch_file = 1
-		break
+		new_start = 0
+	if single.draw(screen):
+		print("Single player")
+	if multi.draw(screen):
+		print("Multiplayer")
 
 	for event in pygame.event.get():
 
-		if event.type == pygame.QUIT:
-			run = False
+		if event.type == pygame.QUIT: exit()
 
-	pygame.display.update()
-
-if switch_file == 1:
-	import main
-if switch_file == 2:
-	import single_player
-if switch_file == 3:
-	import multi_player
-
-pygame.quit()
+	return new_start
