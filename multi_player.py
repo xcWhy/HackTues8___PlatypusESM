@@ -22,9 +22,9 @@ choose_category = ImageDraw.Draw(org_bttn)
 
 Font = ImageFont.truetype('ChalkboardSE-Regular.ttf',125)
 choose_category.text((130,70),"Choose your category", font=Font, fill=(255,255,255))
-org_bttn.save("imgs_updated/ChooseYourCategory.png")
+org_bttn.save('imgs_updated/ChooseYourCategory.png')
 
-choose_ctgr= pygame.image.load('imgs_updated/ChooseYourCategory.png').convert_alpha()
+choose_ctgr = pygame.image.load('imgs_updated/ChooseYourCategory.png').convert_alpha()
 cat_bttn = button.Button(575,200,choose_ctgr,400,100)
 
 
@@ -32,11 +32,12 @@ org_bttn1 = Image.open("imgs_updated/OriginalButton.png")
 engineer = ImageDraw.Draw(org_bttn1)
 
 Font = ImageFont.truetype('ChalkboardSE-Regular.ttf',125)
-engineer.text((130,140),"Engineer", font=Font, fill=(255,255,255))
+engineer.text((450,70),"Engineer", font=Font, fill=(255,255,255))
 org_bttn1.save("imgs_updated/Engineer.png")
 
 eng = pygame.image.load('imgs_updated/Engineer.png').convert_alpha()
 eng_bttn = button.Button(575,300,eng,400,100)
+
 
 run = True
 while run:
