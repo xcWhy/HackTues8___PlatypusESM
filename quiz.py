@@ -19,7 +19,7 @@ def quiz_func(new_start):
 	if back.draw(screen):
 		new_start = 0
 	if single.draw(screen):
-		print("Single player")
+		new_start = 5
 	if multi.draw(screen):
 		print("Multiplayer")
 
