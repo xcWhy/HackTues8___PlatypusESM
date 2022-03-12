@@ -37,7 +37,7 @@ def character_func(new_start):
     astronautw.draw(screen)
     spacesuit.draw(screen)
 
-    rechnik = {
+    list = {
         0: astronautr,
         1: astronautg,
         2: astronautb,
@@ -65,7 +65,7 @@ def character_func(new_start):
             print('Buzz Aldrin')
 
         if reverse.draw(screen):
-            personal_astronaut = rechnik[k]
+            personal_astronaut = list[k]
             k += 1
             if k == 4:
                 k = 0

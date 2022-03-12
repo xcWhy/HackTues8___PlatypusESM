@@ -21,16 +21,31 @@ reverse_button = button.Button(615, 550, reverse, 100, 100)
 next_button = button.Button(750, 550, next, 150, 100)
 
 def training_func(new_start):
-	if back.draw(screen):
-		new_start = 0
+	flip = False
 
-	if reverse_button.draw(screen):
-		print("Flip")
-		answer_static.draw(screen)
-	else:
-		question_static.draw(screen)
+	question_static.draw(screen)
+	while new_start == 2:
+		if reverse_button.draw(screen):
+			if flip == False:
+				flip = True
+			else:
+				flip = False
 
-	if next_button.draw(screen):
-		print("Next")
+			if flip:
+				answer_static.draw(screen)
+			else:
+				question_static.draw(screen)
+
+		if back.draw(screen):
+			new_start = 0
+
+		if next_button.draw(screen):
+			print("Next")
+
+		for event in pygame.event.get():
+			if event.type == pygame.QUIT:
+				exit()
+
+		pygame.display.update()
 
 	return new_start
