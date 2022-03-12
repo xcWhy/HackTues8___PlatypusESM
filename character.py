@@ -73,8 +73,6 @@ def character_func(new_start):
     astronaut = jsonObject['astronaut']
     color = jsonObject['color']
 
-    print(astronaut, color)
-
     with open('writed_json.json', 'w') as jsonFile:
         json.dump(json_data, jsonFile)
         jsonFile.close()
