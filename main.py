@@ -1,9 +1,11 @@
-import pygame
-from training import training_func
 from character import character_func
+from training import training_func
+from quiz import quiz_func
+import pygame
 import static
 import button
 global new_start
+
 
 new_start = 0
 
@@ -29,9 +31,8 @@ def main_func():
 		new_start = 1
 	if button_2.draw(screen):
 		new_start = 2
-
 	if button_3.draw(screen):
-		print("3")
+		new_start = 3
 	if button_4.draw(screen):
 		print("4")
 
@@ -44,6 +45,8 @@ while True:
 		new_start = character_func(new_start)
 	elif new_start == 2:
 		new_start = training_func(new_start)
+	elif new_start == 3:
+		new_start = quiz_func(new_start)
 
 	for event in pygame.event.get():
 		if event.type == pygame.QUIT: exit()
