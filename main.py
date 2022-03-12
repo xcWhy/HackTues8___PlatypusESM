@@ -15,6 +15,7 @@ SCREEN_WIDTH = 1535
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 background = pygame.image.load("imgs/background.png")
 
+back_bttn = pygame.image.load('imgs_updated/Back.png').convert_alpha()
 button_character = pygame.image.load('imgs_updated/Character.png').convert_alpha()
 button_training = pygame.image.load('imgs_updated/TrainingWheels.png').convert_alpha()
 button_game = pygame.image.load('imgs_updated/OutInTheSpace.png').convert_alpha()
@@ -24,6 +25,7 @@ button_1 = button.Button(575, 100, button_character, 400, 100)
 button_2 = button.Button(575, 250, button_training, 400, 100)
 button_3 = button.Button(575, 400, button_game, 400, 100)
 button_4 = button.Button(575, 550, button_share, 400, 100)
+back = button.Button(10, 10, back_bttn, 150, 100)
 
 def main_func():
 	global new_start
@@ -38,6 +40,9 @@ def main_func():
 
 while True:
 	screen.blit(background, (0, 0))
+
+	if back.draw(screen):
+		print("Back")
 
 	if new_start == 0:
 		main_func()
