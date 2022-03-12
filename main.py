@@ -1,3 +1,4 @@
+from homepg import homepage_func
 from character import character_func
 from training import training_func
 from quiz import quiz_func
@@ -7,7 +8,8 @@ import static
 import button
 global new_start
 
-new_start = 0
+new_start = -1
+
 SCREEN_HEIGHT = 800
 SCREEN_WIDTH = 1535
 
@@ -24,10 +26,13 @@ button_1 = button.Button(575, 100, button_character, 400, 100)
 button_2 = button.Button(575, 250, button_training, 400, 100)
 button_3 = button.Button(575, 400, button_game, 400, 100)
 button_4 = button.Button(575, 550, button_share, 400, 100)
-back = button.Button(10, 10, back_bttn, 150, 100)
+back = button.Button(700, 675, back_bttn, 155, 100)
 
 def main_func():
 	global new_start
+
+	if back.draw(screen):
+		new_start = -1
 	if button_1.draw(screen):
 		new_start = 1
 	if button_2.draw(screen):
@@ -40,9 +45,8 @@ def main_func():
 while True:
 	screen.blit(background, (0, 0))
 
-	if back.draw(screen):
-		print("Back")
-
+	if new_start == -1:
+		new_start = homepage_func(new_start)
 	if new_start == 0:
 		main_func()
 	elif new_start == 1:
