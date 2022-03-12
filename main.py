@@ -1,5 +1,6 @@
 import pygame
 from training import training_func
+from character import character_func
 import static
 import button
 global new_start
@@ -25,7 +26,7 @@ button_4 = button.Button(575, 550, button_share, 400, 100)
 def main_func():
 	global new_start
 	if button_1.draw(screen):
-		print("1")
+		new_start = 1
 	if button_2.draw(screen):
 		new_start = 2
 
@@ -39,6 +40,8 @@ while True:
 
 	if new_start == 0:
 		main_func()
+	elif new_start == 1:
+		new_start = character_func(new_start)
 	elif new_start == 2:
 		new_start = training_func(new_start)
 
