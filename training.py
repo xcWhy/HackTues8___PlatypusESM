@@ -40,8 +40,10 @@ def training_func(new_start):
 		jsonObject = json.load(jsonFile)
 		jsonFile.close()
 
-	question = jsonObject['question']
-	answer = jsonObject['answer']
+	i = 0
+
+	question = jsonObject[i]['question']
+	answer = jsonObject[i]['answer']
 
 
 	flip = False
@@ -67,7 +69,13 @@ def training_func(new_start):
 			new_start = 0
 
 		if next_button.draw(screen):
-			print("Next")
+			i += 1
+
+			question = jsonObject[i]['question']
+			answer = jsonObject[i]['answer']
+
+			draw(question, 550, 350)
+
 
 		for event in pygame.event.get():
 			if event.type == pygame.QUIT:
