@@ -8,7 +8,6 @@ import button
 global new_start
 
 new_start = 0
-
 SCREEN_HEIGHT = 800
 SCREEN_WIDTH = 1535
 

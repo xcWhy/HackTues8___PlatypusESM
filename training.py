@@ -14,6 +14,14 @@ answer = pygame.image.load('imgs/karta_otg.png').convert_alpha()
 reverse = pygame.image.load('imgs_updated/UnoReverse.png').convert_alpha()
 next = pygame.image.load('imgs_updated/Next.png').convert_alpha()
 
+button = pygame.Surface((520, 50), pygame.SRCALPHA, 32).convert_alpha()
+buttonBG = pygame.image.load('buttonBG.png')
+button.blit(buttonBG , (0, 0))
+text = font.render('Button text', 1, (136, 255, 0))
+button.blit(text, (0, 0))
+
+screen.blit(button)
+
 back = button.Button(10, 10, back_bttn, 150, 100)
 question_static = static.Static(450, 150, question, 650, 600)
 answer_static = static.Static(450, 150, answer, 650, 600)
