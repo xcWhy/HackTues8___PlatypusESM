@@ -16,7 +16,6 @@ run = True
 while run:
 	screen.blit(background, (0, 0))
 
-	switch_file = 0
 
 	if back.draw(screen):
 		switch_file = 1
