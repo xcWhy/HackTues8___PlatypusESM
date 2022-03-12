@@ -1,11 +1,11 @@
 from character import character_func
 from training import training_func
 from quiz import quiz_func
+from Share import share_func
 import pygame
 import static
 import button
 global new_start
-
 
 new_start = 0
 
@@ -34,7 +34,7 @@ def main_func():
 	if button_3.draw(screen):
 		new_start = 3
 	if button_4.draw(screen):
-		print("4")
+		new_start = 4
 
 while True:
 	screen.blit(background, (0, 0))
@@ -47,6 +47,8 @@ while True:
 		new_start = training_func(new_start)
 	elif new_start == 3:
 		new_start = quiz_func(new_start)
+	elif new_start == 4:
+		new_start = share_func(new_start)
 
 	for event in pygame.event.get():
 		if event.type == pygame.QUIT: exit()
