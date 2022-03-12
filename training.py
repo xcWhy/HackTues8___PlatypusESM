@@ -20,15 +20,10 @@ answer_static = static.Static(450, 150, answer, 650, 600)
 arrow_button = button.Button(75, 300, arrow, 1200, 1200)
 next_button = button.Button(600, 430, next, 400, 410)
 
-run = True
-while run:
-	screen.blit(background, (0, 0))
-
-	switch_file = 0
-
+def training_func(new_start):
 	if back.draw(screen):
-		switch_file = 1
-		break
+		print("Back")
+		new_start = 0
 
 	if arrow_button.draw(screen):
 		answer_static.draw(screen)
@@ -38,15 +33,4 @@ while run:
 	if next_button.draw(screen):
 		print("Next")
 
-
-	for event in pygame.event.get():
-
-		if event.type == pygame.QUIT:
-			run = False
-
-	pygame.display.update()
-
-if switch_file == 1:
-	import main
-
-pygame.quit()
+	return new_start

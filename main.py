@@ -1,5 +1,10 @@
 import pygame
+from training import training_func
+import static
 import button
+global new_start
+
+new_start = 0
 
 SCREEN_HEIGHT = 800
 SCREEN_WIDTH = 1535
@@ -17,38 +22,29 @@ button_2 = button.Button(575, 250, button_training, 400, 100)
 button_3 = button.Button(575, 400, button_game, 400, 100)
 button_4 = button.Button(575, 550, button_share, 400, 100)
 
-run = True
-while run:
+def main_func():
+	global new_start
+	if button_1.draw(screen):
+		print("1")
+	if button_2.draw(screen):
+		new_start = 2
+
+	if button_3.draw(screen):
+		print("3")
+	if button_4.draw(screen):
+		print("4")
+
+while True:
 	screen.blit(background, (0, 0))
 
-	switch_file = 0
-
-	if button_1.draw(screen):
-		switch_file = 1
-		break
-	if button_2.draw(screen):
-		switch_file = 2
-		break
-	if button_3.draw(screen):
-		switch_file = 3
-		break
-	if button_4.draw(screen):
-		switch_file = 4
-		break
+	if new_start == 0:
+		main_func()
+	elif new_start == 2:
+		new_start = training_func(new_start)
 
 	for event in pygame.event.get():
-		if event.type == pygame.QUIT:
-			run = False
+		if event.type == pygame.QUIT: exit()
 
 	pygame.display.update()
-
-if switch_file == 1:
-	import character
-if switch_file == 2:
-	import training
-if switch_file == 3:
-	import quiz
-if switch_file == 4:
-	import Share
 
 pygame.quit()
