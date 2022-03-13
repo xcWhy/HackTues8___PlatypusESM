@@ -7,7 +7,6 @@ import button
 
 
 background = pygame.image.load("imgs/background.png")
-back_bttn = pygame.image.load('imgs_updated/Back.png').convert_alpha()
 
 bttn = pygame.image.load('imgs_updated/OriginalButton.png').convert_alpha()
 cum = pygame.image.load('imgs_updated/ComingSoon.png').convert_alpha()
