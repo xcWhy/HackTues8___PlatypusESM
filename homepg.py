@@ -1,26 +1,23 @@
+from screen_info import screen
+from text import draw
 import pygame
 import button
 import static
 
-SCREEN_HEIGHT = 800
-SCREEN_WIDTH = 1535
-
-screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
-
 background = pygame.image.load("imgs_updated/Start_Screen.png").convert_alpha()
-set_bttn = pygame.image.load('imgs_updated/Settings.png').convert_alpha()
-menu = pygame.image.load('imgs_updated/Menu.png').convert_alpha()
-exit = pygame.image.load('imgs_updated/Exit.png').convert_alpha()
+background_static = static.Static(0, -100, background, 1535, 900)
 
-bckg = static.Static(0, -100, background, 1535, 900)
-exit_button = button.Button(1390, 5, exit, 130, 100)
-set = button.Button(10, 10, set_bttn, 150, 100)
-menu_button = button.Button(1240, 5, menu, 150, 100)
+settings = pygame.image.load('imgs_updated/Settings.png').convert_alpha()
+bttn = pygame.image.load('imgs_updated/OriginalButton.png').convert_alpha()
+
+settings_button = button.Button(10, 10, settings, 150, 100)
+menu_button = button.Button(1240, 5, bttn, 150, 100)
+exit_button = button.Button(1390, 5, bttn, 130, 100)
 
 def homepage_func(new_start):
-    bckg.draw(screen)
+    background_static.draw(screen)
 
-    if set.draw(screen):
+    if settings_button.draw(screen):
         new_start = -2
 
     if menu_button.draw(screen):
@@ -28,6 +25,9 @@ def homepage_func(new_start):
 
     if exit_button.draw(screen):
         exit()
+
+    draw("Menu", 1275, 30, 36)
+    draw("Exit", 1425, 30, 36)
 
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
