@@ -24,8 +24,6 @@ resolution = button.Button(10, 680, bttn, 250, 100)
 def settings_func(new_start):
     if back.draw(screen):
         new_start = -1
-    if resolution.draw(screen):
-        print("resolution")
 
     Credit.draw(screen)
     Imena.draw(screen)
@@ -39,7 +37,6 @@ def settings_func(new_start):
     draw("Нейчо Калайджиев - ментор", 1000, 310, 32)
     draw("проект - Spacequiz", 1000, 350, 32)
     draw("HackTues 8 - 2022", 1000, 390, 32)
-    draw("resolution", 50, 700, 36)
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             exit()
