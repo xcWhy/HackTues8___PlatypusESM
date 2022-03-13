@@ -64,7 +64,7 @@ def training_func(new_start):
 	answer = jsonObject[i]['answer']
 
 
-	flip = False
+	flip = True
 
 	question_static.draw(screen)
 	draw(question, 750, 350)
@@ -87,12 +87,12 @@ def training_func(new_start):
 			new_start = 0
 
 		if next_button.draw(screen):
-			i += 1
-
 			if question != "END":
 				draw(question, 750, 350)
 			else:
-				i = 0;
+				i = 0
+
+			i += 1
 
 			question = jsonObject[i]['question']
 			answer = jsonObject[i]['answer']
