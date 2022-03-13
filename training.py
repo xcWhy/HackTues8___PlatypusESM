@@ -16,12 +16,30 @@ screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 background = pygame.image.load("imgs/background.png")
 
 def draw(text, X, Y):
+
 	pygame.init()
+	letters = []
+	lettersCount = len(text)
+
+	for i in range(0, lettersCount):
+		letters.append(text[i])
+		if i % 30 == 0 and i != 0:
+			letters.append("\n\r")
+	text = "".join(letters)
+
+	lines = text.split("\n\r")
 	font = pygame.font.SysFont('Comic Sans MS', 24)
-	paragraph = font.render(text, True, (WHITE))
-	screen.blit(paragraph, (X, Y))
+	y_offset = 0
+	for line in lines:
+		fw, fh = font.size(line)
 
+		tx = X - fw / 2
+		ty = Y + y_offset
 
+		font_surface = font.render(line, True, WHITE)
+		screen.blit(font_surface, (tx, ty))
+
+		y_offset += fh
 
 back_bttn = pygame.image.load('imgs_updated/Back.png').convert_alpha()
 question = pygame.image.load('imgs_updated/FlashCard_Template.png').convert_alpha()
@@ -49,7 +67,7 @@ def training_func(new_start):
 	flip = False
 
 	question_static.draw(screen)
-	draw(question, 550, 350)
+	draw(question, 750, 350)
 	while new_start == 2:
 
 		if reverse_button.draw(screen):
@@ -60,10 +78,10 @@ def training_func(new_start):
 
 			if flip:
 				answer_static.draw(screen)
-				draw(answer, 550, 350)
+				draw(answer, 750, 350)
 			else:
 				question_static.draw(screen)
-				draw(question, 550, 350)
+				draw(question, 750, 350)
 
 		if back.draw(screen):
 			new_start = 0
@@ -72,9 +90,9 @@ def training_func(new_start):
 			i += 1
 
 			if question != "END":
-				draw(question, 550, 350)
+				draw(question, 750, 350)
 			else:
-				i=0;
+				i = 0;
 
 			question = jsonObject[i]['question']
 			answer = jsonObject[i]['answer']

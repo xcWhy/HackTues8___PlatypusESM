@@ -1,0 +1,27 @@
+def draw(text, X, Y):
+
+	print(X)
+	pygame.init()
+	letters = []
+	lettersCount = len(text)
+
+	for i in range(0, lettersCount):
+		letters.append(text[i])
+		if i % 30 == 0 and i != 0:
+			letters.append("\n\r")
+	text = "".join(letters)
+
+	lines = text.split("\n\r")
+	font = pygame.font.SysFont('Comic Sans MS', 24)
+	y_offset = 0
+	for line in lines:
+		fw, fh = font.size(line)
+		print("",fw, fh)
+
+		tx = X - fw / 2
+		ty = Y + y_offset
+
+		font_surface = font.render(line, True, WHITE)
+		screen.blit(font_surface, (tx, ty))
+
+		y_offset += fh
