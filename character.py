@@ -54,9 +54,6 @@ def character_func(new_start):
     astronaut = jsonObject['astronaut']
     color = jsonObject['color']
 
-    with open('writed_json.json', 'w') as jsonFile:
-        json.dump(json_data, jsonFile)
-        jsonFile.close()
 
     choose_astronaut.draw(screen)
     astronaut_white_static.draw(screen)
