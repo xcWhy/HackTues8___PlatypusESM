@@ -41,13 +41,13 @@ def draw(text, X, Y):
 		y_offset += fh
 
 
-back_bttn = pygame.image.load('imgs_updated/Back.png').convert_alpha()
-correct = pygame.image.load('imgs_updated/Back.png').convert_alpha()
-wrong = pygame.image.load('imgs_updated/Back.png').convert_alpha()
+#back_bttn = pygame.image.load('imgs_updated/Back.png').convert_alpha()
+#correct = pygame.image.load('imgs_updated/Back.png').convert_alpha()
+#wrong = pygame.image.load('imgs_updated/Back.png').convert_alpha()
 
 bttn = pygame.image.load('imgs_updated/OriginalButton.png').convert_alpha()
 
-back = button.Button(10, 690, back_bttn, 150, 100)
+back = button.Button(10, 690, bttn, 150, 100)
 answer_1_button = button.Button(250, 300, bttn, 500, 200)
 answer_2_button = button.Button(250, 500, bttn, 500, 200)
 answer_3_button = button.Button(790, 300, bttn, 500, 200)
