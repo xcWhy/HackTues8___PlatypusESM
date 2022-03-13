@@ -1,10 +1,12 @@
-{"question": "Which of the following structures is NOT considered a rocket structure?", "right_answer": "peak", "wrong_answer_1": "housing" ,"wrong_answer_2": "nozzle","wrong_answer_3": "fairing"}
-{"question": "What does a rocket have to be to make it easier to send into space?", "right_answer": "lighter", "wrong_answer_1": "heavier", "wrong_answer_2": "It doesn't matter the weigth, it matters the material", "wrong_answer_3": "There is no correct answer"}
-{"question": "How many light years from Earth is the nearest star (after the Sun)?", "right_answer": "4,2 light years", "wrong_answer_1": "5,2 light years", "wrong_answer_2": "3,2 light years", "wrong_answer_3": "10,2 light years"}
-{"question": "Which is the closest galaxy to ours - the Milky Way?", "right_answer": "Andromeda", "wrong_answer_1": "M104(Sombrero)", "wrong_answer_2": "Large Magellanic cloud", "wrong_answer_3": "Small Magellanic cloud"}
-{"question": "Which space objects were once called frozen stars?", "right_answer": "black holes", "wrong_answer_1": "quasars", "wrong_answer_2": "pulsars", "wrong_answer_3": "white drawfs"}
-{"question": "What is the most difficult thing a rocket has to overcome to reach space?", "right_answer": "the Earth's gravity", "wrong_answer_1": "solar radiation", "wrong_answer_2": "air masses", "wrong_answer_3": "wind speed"}
-{"question": "How many parts make up the spacesuit?", "right_answer": "4", "wrong_answer_1": "7", "wrong_answer_2": "1", "wrong_answer_3": "3"}
-{"question": "How many seconds can a person last in outer space without a spacesuit?", "right_answer": "90 seconds", "wrong_answer_1": "60 seconds", "wrong_answer_2": "30 seconds", "wrong_answer_3": "0 seconds"}
-{"question": "What was the first animal to fly into orbit around the Earth?", "right_answer": "The Laika Dog", "wrong_answer_1": "The monkey Albert II", "wrong_answer_2": "Fruit flies", "wrong_answer_3": "The cat Masha"}
-{"question": "Which of the following materials is NOT most commonly used to make rockets?", "right_answer": "iron", "wrong_answer_1": "steel", "wrong_answer_2": "aluminium", "wrong_answer_3": "titanium"}
+[
+  {"question": "Which of the following structures is NOT considered a rocket structure?", "right_answer": "peak", "wrong_answer_1": "housing" ,"wrong_answer_2": "nozzle","wrong_answer_3": "fairing"},
+  {"question": "What does a rocket have to be to make it easier to send into space?", "right_answer": "lighter", "wrong_answer_1": "heavier", "wrong_answer_2": "It doesn't matter the weigth, it matters the material", "wrong_answer_3": "There is no correct answer"},
+  {"question": "How many light years from Earth is the nearest star (after the Sun)?", "right_answer": "4,2 light years", "wrong_answer_1": "5,2 light years", "wrong_answer_2": "3,2 light years", "wrong_answer_3": "10,2 light years"},
+  {"question": "Which is the closest galaxy to ours - the Milky Way?", "right_answer": "Andromeda", "wrong_answer_1": "M104(Sombrero)", "wrong_answer_2": "Large Magellanic cloud", "wrong_answer_3": "Small Magellanic cloud"},
+  {"question": "Which space objects were once called frozen stars?", "right_answer": "black holes", "wrong_answer_1": "quasars", "wrong_answer_2": "pulsars", "wrong_answer_3": "white drawfs"},
+  {"question": "What is the most difficult thing a rocket has to overcome to reach space?", "right_answer": "the Earth's gravity", "wrong_answer_1": "solar radiation", "wrong_answer_2": "air masses", "wrong_answer_3": "wind speed"},
+  {"question": "How many parts make up the spacesuit?", "right_answer": "4", "wrong_answer_1": "7", "wrong_answer_2": "1", "wrong_answer_3": "3"},
+  {"question": "How many seconds can a person last in outer space without a spacesuit?", "right_answer": "90 seconds", "wrong_answer_1": "60 seconds", "wrong_answer_2": "30 seconds", "wrong_answer_3": "0 seconds"},
+  {"question": "What was the first animal to fly into orbit around the Earth?", "right_answer": "The Laika Dog", "wrong_answer_1": "The monkey Albert II", "wrong_answer_2": "Fruit flies", "wrong_answer_3": "The cat Masha"},
+  {"question": "Which of the following materials is NOT most commonly used to make rockets?", "right_answer": "iron", "wrong_answer_1": "steel", "wrong_answer_2": "aluminium", "wrong_answer_3": "titanium"}
+]
