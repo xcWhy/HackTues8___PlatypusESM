@@ -18,9 +18,9 @@ def quiz_func(new_start):
 	if multi.draw(screen):
 		print("Multiplayer")
 
-	#draw("Character", 700, 125, 36)
-	#draw("Character", 700, 125, 36)
-	#draw("Character", 700, 125, 36)
+	draw("Back", 45, 35, 36)
+	draw("Singleplayer", 250, 365, 50)
+	draw("Multiplayer", 1000, 365, 50)
 
 	for event in pygame.event.get():
 
