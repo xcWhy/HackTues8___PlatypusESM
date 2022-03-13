@@ -1,69 +1,50 @@
+from screen_info import screen
+from text import draw
 import button
 import pygame
 import static
 import json
 
 ############################ JSON DATA ############################
+
 json_data = {
     "astronaut": None,
     "color": None
 }
 
-############################### SCREEN #############################
-SCREEN_HEIGHT = 800
-SCREEN_WIDTH = 1535
+###################################################################
 
-screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+######################## Images & Buttons #########################
 
+bttn = pygame.image.load('imgs_updated/OriginalButton.png').convert_alpha()
+select_bttn = pygame.image.load('imgs_updated/ReverseButton.png').convert_alpha()
 
-############################## BUTTONS #############################
-back = pygame.image.load('imgs_updated/Back.png').convert_alpha()
-back_button = button.Button(10, 10, back, 150, 100)
+back_button = button.Button(10, 10, bttn, 150, 100)
+choose_astronaut = static.Static(130, 165, bttn, 350, 75)
+Nelson_Armstrong = button.Button(130, 270, bttn, 350, 75)
+select_Nelson_Armstrong = button.Button(130, 270, select_bttn, 350, 75)
+Yuri_Gagarin = button.Button(130, 355, bttn, 350, 75)
+select_Yuri_Gagarin = button.Button(130, 355, select_bttn, 350, 75)
+Buzz_Aldrin = button.Button(130, 440, bttn, 350, 75)
+select_Buzz_Aldrin = button.Button(130, 440, select_bttn, 350, 75)
+spacesuit = static.Static(1000, 600, bttn, 350, 75)
 
-reverse_img = pygame.image.load('imgs_updated/UnoReverse.png').convert_alpha()
-reverse = button.Button(1140, 675, reverse_img, 75, 75)
+astronaut_white= pygame.image.load('imgs_updated/AstronautWhite.png').convert_alpha()
+astronaut_white_static = static.Static(400, -170, astronaut_white, 1000, 1000)
 
+astronaut_blue = pygame.image.load('imgs_updated/AstronautBlue.png').convert_alpha()
+astronaut_blue_static = static.Static(400, -170, astronaut_blue, 1000, 1000)
 
-############################ ASTRONAUTS ############################
-choose_img = pygame.image.load('imgs_updated/ChooseYourAstronaut.png').convert_alpha()
-choose = static.Static(130, 165, choose_img, 350, 75)
+astronaut_green = pygame.image.load('imgs_updated/AstronautGreen.png').convert_alpha()
+astronaut_green_static = static.Static(400, -170, astronaut_green, 1000, 1000)
 
-nelson_img = pygame.image.load('imgs_updated/Nelson.png').convert_alpha()
-Nelson = button.Button(130, 270, nelson_img, 350, 75)
+astronaut_red = pygame.image.load('imgs_updated/AstronautRed.png').convert_alpha()
+astronaut_red_static = static.Static(400, -170, astronaut_red, 1000, 1000)
 
-nelson_reverse_img = pygame.image.load('imgs_updated/Nelson2.png').convert_alpha()
-Nelson_reverse = button.Button(130, 270, nelson_reverse_img, 350, 75)
+swap = pygame.image.load('imgs_updated/UnoReverse.png').convert_alpha()
+swap_button = button.Button(1140, 675, swap, 75, 75)
 
-yuri_img = pygame.image.load('imgs_updated/Yuri.png').convert_alpha()
-Yuri = button.Button(130, 355, yuri_img, 350, 75)
-
-yuri_reverse_img = pygame.image.load('imgs_updated/Yuri2.png').convert_alpha()
-Yuri_reverse = button.Button(130, 355, yuri_reverse_img, 350, 75)
-
-buzz_img = pygame.image.load('imgs_updated/Buzz.png').convert_alpha()
-Buzz = button.Button(130, 440, buzz_img, 350, 75)
-
-buzz_reverse_img = pygame.image.load('imgs_updated/Buzz2.png').convert_alpha()
-Buzz_reverse = button.Button(
-     130, 440, buzz_reverse_img, 350, 75)
-
-
-########################## CHARACTER ################################
-spacesuit_img = pygame.image.load('imgs_updated/ChooseYourSpacesuit.png').convert_alpha()
-spacesuit = static.Static(1000, 600, spacesuit_img, 350, 75)
-
-astronautw_img = pygame.image.load('imgs_updated/AstronautWhite.png').convert_alpha()
-astronautw = static.Static(400, -170, astronautw_img, 1000, 1000)
-
-astronautb_img = pygame.image.load('imgs_updated/AstronautBlue.png').convert_alpha()
-astronautb = static.Static(400, -170, astronautb_img, 1000, 1000)
-
-astronautg_img = pygame.image.load('imgs_updated/AstronautGreen.png').convert_alpha()
-astronautg = static.Static(400, -170, astronautg_img, 1000, 1000)
-
-astronautr_img = pygame.image.load('imgs_updated/AstronautRed.png').convert_alpha()
-astronautr = static.Static(400, -170, astronautr_img, 1000, 1000)
-
+#####################################################################
 
 def character_func(new_start):
     with open(".json/character.json") as jsonFile:
@@ -77,15 +58,15 @@ def character_func(new_start):
         json.dump(json_data, jsonFile)
         jsonFile.close()
 
-    choose.draw(screen)
-    astronautw.draw(screen)
+    choose_astronaut.draw(screen)
+    astronaut_white_static.draw(screen)
     spacesuit.draw(screen)
 
     list = {
-        0: astronautr,
-        1: astronautg,
-        2: astronautb,
-        3: astronautw
+        0: astronaut_red_static,
+        1: astronaut_green_static,
+        2: astronaut_blue_static,
+        3: astronaut_white_static
     }
 
     if color == 0:
@@ -95,7 +76,7 @@ def character_func(new_start):
     k = color
 
     while new_start == 1:
-        choose.draw(screen)
+        choose_astronaut.draw(screen)
         personal_astronaut.draw(screen)
 
         if back_button.draw(screen):
@@ -103,43 +84,51 @@ def character_func(new_start):
 
 
         if astronaut == 'Nelson Armstrong':
-            if Nelson_reverse.draw(screen):
+            if select_Nelson_Armstrong.draw(screen):
                 astronaut = "Nelson Armstrong"
 
-            if Yuri.draw(screen):
+            if Yuri_Gagarin.draw(screen):
                 astronaut = "Yuri Gagarin"
 
-            if Buzz.draw(screen):
+            if Buzz_Aldrin.draw(screen):
                 astronaut = "Buzz Aldrin"
 
         if astronaut == 'Yuri Gagarin':
-            if Nelson.draw(screen):
+            if Nelson_Armstrong.draw(screen):
                 astronaut = "Nelson Armstrong"
 
-            if Yuri_reverse.draw(screen):
+            if select_Yuri_Gagarin.draw(screen):
                 astronaut = "Yuri Gagarin"
 
-            if Buzz.draw(screen):
+            if Buzz_Aldrin.draw(screen):
                 astronaut = "Buzz Aldrin"
 
         if astronaut == 'Buzz Aldrin':
-            if Nelson.draw(screen):
+            if Nelson_Armstrong.draw(screen):
                 astronaut = "Nelson Armstrong"
 
-            if Yuri.draw(screen):
+            if Yuri_Gagarin.draw(screen):
                 astronaut = "Yuri Gagarin"
 
-            if Buzz_reverse.draw(screen):
+            if select_Buzz_Aldrin.draw(screen):
                 astronaut = "Buzz Aldrin"
 
 
-        if reverse.draw(screen):
+        if swap_button.draw(screen):
             personal_astronaut = list[k]
             k += 1
             if k == 4:
                 k = 0
 
             color = k
+
+        draw("Back", 45, 35, 36)
+        draw("Choose your astronaut", 150, 180, 30)
+        draw("Nelson Armstrong", 180, 285, 30)
+        draw("Yuri Gagarin", 220, 370, 30)
+        draw("Buzz Aldrin", 225, 455, 30)
+        draw("Choose your spacesuit", 1025, 615, 30)
+
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
