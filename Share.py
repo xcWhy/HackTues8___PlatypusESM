@@ -1,3 +1,4 @@
+from text import draw
 import pygame
 import pygame_textinput
 import static
@@ -49,14 +50,18 @@ def share_func(new_start):
     textinput.update(events)
     screen.blit(textinput.surface, (460, 375))
 
-    if send_button.draw(screen):
-        print("Send")
-
     if back_button.draw(screen):
     	new_start = 0
 
+    if send_button.draw(screen):
+    	print("Send")
+
     for event in pygame.event.get():
     	if event.type == pygame.QUIT: exit()
+
+    draw("Send", 735, 700, 32)
+    draw("Back", 50, 35, 32)
+    draw("if you know anything, that you haven't seen in our training program, please add it", 450, 135, 18)
 
     pygame.display.update()
 
