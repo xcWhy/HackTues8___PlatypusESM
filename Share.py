@@ -11,21 +11,19 @@ SCREEN_WIDTH = 1535
 screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 background = pygame.image.load("imgs/background.png")
 
-back_bttn = pygame.image.load('imgs_updated/Back.png').convert_alpha()
-share_bttn = pygame.image.load('imgs_updated/IfYouHavnetSeen.png').convert_alpha()
+bttn = pygame.image.load('imgs_updated/OriginalButton.png').convert_alpha()
 type_space = pygame.image.load('imgs_updated/TipBoard.png').convert_alpha()
-send = pygame.image.load('imgs_updated/Send.png').convert_alpha()
 
-send_button = button.Button(700, 675, send, 150, 100)
-back = button.Button(10, 10, back_bttn, 150, 100)
-share = static.Static(375, 50, share_bttn, 800, 200)
-type = static.Static(260, 140, type_space, 1000 ,800)
+send_button = button.Button(700, 675, bttn, 150, 100)
+back_button = button.Button(10, 10, bttn, 150, 100)
+share_knowledge = static.Static(375, 50, bttn, 800, 200)
+type_static = static.Static(260, 140, type_space, 1000 ,800)
 
 textinput = pygame_textinput.TextInputVisualizer()
 
 font = pygame.font.SysFont(r'C:\Users\MAGI\Desktop\HackTues8___PlatypusESM\font\ChalkboardSE-Regular.ttf', 32)
 
-def blit_text(share_bttn, textinput, pos, font, color=pygame.Color('white')):
+def blit_text(share_knowledge, textinput, pos, font, color=pygame.Color('white')):
     words = [word.split(' ') for word in text.splitlines()]  # 2D array where each row is a list of words.
     space = font.size(' ')[0]  # The width of a space.
     max_width, max_height = surface.get_size()
@@ -43,8 +41,8 @@ def blit_text(share_bttn, textinput, pos, font, color=pygame.Color('white')):
         y += word_height  # Start on new row.
 
 def share_func(new_start):
-    share.draw(screen)
-    type.draw(screen)
+    share_knowledge.draw(screen)
+    type_static.draw(screen)
 
     events = pygame.event.get()
 
@@ -54,7 +52,7 @@ def share_func(new_start):
     if send_button.draw(screen):
         print("Send")
 
-    if back.draw(screen):
+    if back_button.draw(screen):
     	new_start = 0
 
     for event in pygame.event.get():
