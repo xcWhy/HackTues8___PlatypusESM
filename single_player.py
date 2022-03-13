@@ -92,7 +92,7 @@ def single_player_func(new_start):
 			is_select = 1
 			print("Wrong")
 			exit()
-			
+
 
 
 	draw(question, 800, 60)

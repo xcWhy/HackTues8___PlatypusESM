@@ -16,7 +16,7 @@ def quiz_func(new_start):
 	if single.draw(screen):
 		new_start = 5
 	if multi.draw(screen):
-		print("Multiplayer")
+		new_start = 6
 
 	draw("Back", 45, 35, 36)
 	draw("Singleplayer", 250, 365, 50)

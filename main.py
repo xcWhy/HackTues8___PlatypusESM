@@ -5,6 +5,7 @@ from character import character_func
 from training import training_func
 from quiz import quiz_func
 from single_player import single_player_func
+from multi_player import multi_player_func
 from Share import share_func
 from text import draw
 import pygame
@@ -64,6 +65,8 @@ while True:
 		new_start = share_func(new_start)
 	elif new_start == 5:
 		new_start = single_player_func(new_start)
+	elif new_start == 6:
+		new_start = multi_player_func(new_start)
 
 	for event in pygame.event.get():
 		if event.type == pygame.QUIT: exit()
