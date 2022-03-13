@@ -1,11 +1,10 @@
 from screen_info import screen
-from text import draw
 import pygame
 import static
 import button
 import json
 
-WHITE = (0, 0, 0)
+WHITE = (255, 255, 255)
 
 json_data = {
     "question": None,
@@ -28,7 +27,7 @@ def draw(text, X, Y):
 	text = "".join(letters)
 
 	lines = text.split("\n\r")
-	font = pygame.font.SysFont('Comic Sans MS', 24)
+	font = pygame.font.SysFont('Comic Sans MS', 40)
 	y_offset = 0
 	for line in lines:
 		fw, fh = font.size(line)
@@ -43,6 +42,8 @@ def draw(text, X, Y):
 
 
 back_bttn = pygame.image.load('imgs_updated/Back.png').convert_alpha()
+correct = pygame.image.load('imgs_updated/Back.png').convert_alpha()
+wrong = pygame.image.load('imgs_updated/Back.png').convert_alpha()
 
 bttn = pygame.image.load('imgs_updated/OriginalButton.png').convert_alpha()
 
@@ -52,10 +53,10 @@ answer_2_button = button.Button(250, 500, bttn, 500, 200)
 answer_3_button = button.Button(790, 300, bttn, 500, 200)
 answer_4_button = button.Button(790, 500, bttn, 500, 200)
 question_static = static.Static(235, 10, bttn, 1065, 250)
+correct_static = static.Static(500, 600, bttn, 1065, 250)
+wrong_static = static.Static(235, 10, bttn, 1065, 250)
 
 def single_player_func(new_start):
-	is_select = 0
-
 	with open(".json/questions.json") as jsonFile:
 		jsonObject = json.load(jsonFile)
 		jsonFile.close()
@@ -66,40 +67,40 @@ def single_player_func(new_start):
 	wrong_answer_2 = jsonObject[0]['wrong_answer_2']
 	wrong_answer_3 = jsonObject[0]['wrong_answer_3']
 
-	if back.draw(screen):
-		new_start = 3
-
 	question_static.draw(screen)
 
-	if is_select == 0:
+	is_select = 0
+	while is_select == 0:
 		if answer_1_button.draw(screen):
 			select_button = right_answer
 			is_select = 1
 			print("Correct")
-			exit()
+
 		if answer_2_button.draw(screen):
 			select_button = wrong_answer_2
 			is_select = 1
 			print("Wrong")
-			exit()
+
 		if answer_3_button.draw(screen):
 			select_button = wrong_answer_1
 			is_select = 1
 			print("Wrong")
-			exit()
+
 		if answer_4_button.draw(screen):
 			select_button = wrong_answer_3
 			is_select = 1
 			print("Wrong")
-			exit()
+
+		if is_select == 1:
+			break
+
+		draw(question, 800, 60)
+		draw(right_answer, 340, 370)
+		draw(wrong_answer_1, 900, 370)
+		draw(wrong_answer_2, 340, 570)
+		draw(wrong_answer_3, 900, 570)
 
 
-
-	draw(question, 800, 60)
-	draw(right_answer, 340, 370)
-	draw(wrong_answer_1, 900, 370)
-	draw(wrong_answer_2, 340, 570)
-	draw(wrong_answer_3, 900, 570)
 
 	for event in pygame.event.get():
 
