@@ -17,7 +17,6 @@ background = pygame.image.load("imgs/background.png")
 
 def draw(text, X, Y):
 
-	print(X)
 	pygame.init()
 	letters = []
 	lettersCount = len(text)
@@ -33,7 +32,6 @@ def draw(text, X, Y):
 	y_offset = 0
 	for line in lines:
 		fw, fh = font.size(line)
-		print("",fw, fh)
 
 		tx = X - fw / 2
 		ty = Y + y_offset
